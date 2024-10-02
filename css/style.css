@@ -89,6 +89,8 @@ ul {
     height: 90px;
 } */
 
+/* ====================================================*/
+/* General Header Styles */
 header {
     position: fixed;
     width: 100%;
@@ -96,10 +98,10 @@ header {
     left: 0;
     z-index: 100;
     opacity: 1;
-    padding: 15px ;
-    /* background: var(--primary-color); */
+    padding: 15px;
 }
 
+/* Navigation Bar */
 .navbar {
     display: flex;
     padding: 15px 0 15px 20px;
@@ -107,14 +109,13 @@ header {
     align-items: center;
     margin: auto;
     max-width: var(--site-max-width);
-
-
     backdrop-filter: blur(30px);
     box-shadow: 0px 0px 0px rgba(227, 228, 237. 0.37);
     border: 1.5px solid rgba(255, 255, 255, 0.18);
     border-radius: 10px;
 }
 
+/* Hamburger button (for mobile) */
 .navbar .hamburger-btn {
     display: none;
     color: #fff;
@@ -122,68 +123,117 @@ header {
     font-size: 1.5rem;
 }
 
+/* Logo */
 .navbar .logo {
     display: flex;
     gap: 15px;
     align-items: center;
 }
 
+/* Logo Image */
 .navbar .logo img {
     max-width: 55px;
 }
 
+/* Logo Text */
 .navbar .logo h2 {
     color: var(--primary-color);
     font-weight: 600;
     font-size: 32px;
 }
 
+/* Links */
 .navbar .links {
     display: flex;
     gap: 10px;
+    position: relative; /* Update this */
 }
 
+/* Close Button for Mobile Menu */
 .navbar .close-btn {
-    position: absolute;
-    right: 20px;
-    top: 20px;
     display: none;
     color: white;
     cursor: pointer;
 }
 
+/* Link Styling */
 .navbar .links a {
     display: block;
     padding: 10px 25px;
     font-size: 18px;
     font-weight: 500;
     color: var(--primary-color);
-    /* border-radius: 30px; */
     transition: all 0.2s ease;
 }
 
 .navbar .links a:hover {
     color: var(--secondary-color);
     text-decoration: underline;
-    /* background-color: var(--secondary-color); */
-    
 }
+
+/* Login Button */
 .navbar .login-btn {
-    display: flex;
     padding: 10px 25px;
     font-size: 18px;
     font-weight: 500;
-    /* color: var(--white-color); */
-    border-radius: 30px;
-    /* border-color:rgba(255, 255, 255, 0.18) ; */
-    /* background-color: #3b141c; */
     background-color: rgba(255, 255, 255, 0.18);
+    border-radius: 30px;
     transition: all 0.2s ease;
 }
-.navbar .login-btn:hover{
-    color: var(rgba(255, 255, 255, 0.18));
-    /* background-color: var(--secondary-color); */
+
+.navbar .login-btn:hover {
+    color: rgba(255, 255, 255, 0.18);
 }
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    .navbar .links {
+        display: none;
+        position: absolute;  /* Ensure the position is absolute */
+        top: 60px;
+        right: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9); /* Dark background for visibility */
+        padding: 20px;
+        gap: 20px;
+        z-index: 999;  /* Ensure it's above other elements */
+    }
+
+    /* Show the hamburger icon */
+    .navbar .hamburger-btn {
+        display: inline-block;
+    }
+
+    /* Display the mobile links when the checkbox is checked */
+    #click:checked ~ .links {
+        display: flex;  /* Show the menu */
+    }
+
+    /* Close button inside mobile menu */
+    .navbar .close-btn {
+        display: inline-block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    .navbar .links a {
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .navbar .login-btn {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+}
+
+/*================================================================*/
 
 nav label {
     font-size: 32px;
@@ -997,3 +1047,6 @@ footer {
 .footer_section .follow_us i:hover {
     color: var(--secondary-color);
 }
+
+
+
