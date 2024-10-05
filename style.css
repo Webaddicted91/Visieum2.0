@@ -652,7 +652,7 @@ path:hover, circle:hover {
 
 .button {
   display: flex;
-  justify-content: end;
+  justify-content: center;
 }
 .read-more-btn {
   margin-bottom: 8px;
