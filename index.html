@@ -14,7 +14,67 @@
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="app.js" defer></script>
-  
+    
+    <style>
+ /* Basic navbar styles */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
+    backdrop-filter: blur(10px); /* Blur effect for the background */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Center items vertically */
+    padding: 10px 20px;
+}
+
+/* Navbar links */
+.links {
+    display: flex; /* Keep links in a row */
+    list-style: none; /* Remove bullet points */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+}
+
+/* Individual link styles */
+.links li {
+    margin-right: 12px; /* Space between links */
+}
+
+/* Link styles */
+.links a {
+    text-decoration: none;
+    color: #fff; /* White text color */
+    padding: 6px 10px; /* Further reduced spacing around links */
+    font-size: 13px; /* Further reduced font size */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Hover effect for links */
+.links a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: #fff; /* Keep text color white on hover */
+    border-radius: 5px; /* Rounded corners for a nicer look */
+}
+
+/* Login button styles */
+.login-btn {
+    background-color: rgba(40, 167, 69, 0.9); /* Slightly transparent greenish background for login button */
+    color: black; /* White text */
+    border: none; /* No border */
+    padding: 6px 12px; /* Reduced spacing inside button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor to indicate clickability */
+    transition: background-color 0.3s; /* Smooth transition */
+    font-size: 13px; /* Match button font size with links */
+}
+
+/* Hover effect for login button */
+.login-btn:hover {
+    background-color: lightskyblue; /* Darker transparent green on hover */
+}
+
+
+
+  </style>
   </head>
   <body>
   <div>
