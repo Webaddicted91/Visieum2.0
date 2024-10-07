@@ -34,6 +34,31 @@
             <!--<button class="login-btn">LOG IN</button> -->
         </nav>
      </header>
+     <div class="wrapper">
+    <section class="booking-section">
+        <h2>Book Your Museum Visit</h2>
+        <form id="bookingForm">
+            <div class="form-group">
+                <label for="visitDate">Visit Date:</label>
+                <input type="date" id="visitDate" required>
+            </div>
+            <div class="form-group">
+                <label for="visitTime">Visit Time:</label>
+                <input type="time" id="visitTime" required>
+            </div>
+            <div class="form-group">
+                <label for="numVisitors">Number of Visitors:</label>
+                <input type="number" id="numVisitors" min="1" value="1" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" placeholder="name@example.com" required>
+            </div>
+            <button type="submit" class="book-btn">Book Now</button>
+        </form>
+        <p id="confirmationMessage" class="confirmation-message">Your visit has been successfully booked!</p>
+    </section>
+     </div>
      <script src="app.js"></script>
 </body>
 </html>
