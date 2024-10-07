@@ -33,3 +33,21 @@ paths.forEach(function(p) {
         // You can perform different actions based on the ID or data attributes
     });
 });
+// booking section js
+document.getElementById('bookingForm').addEventListener('submit', function (event) {
+    event.preventDefault();  // Prevent form submission
+
+    // Get form values
+    const visitDate = document.getElementById('visitDate').value;
+    const visitTime = document.getElementById('visitTime').value;
+    const numVisitors = document.getElementById('numVisitors').value;
+    const email = document.getElementById('email').value;
+
+    // Simple validation check (you can add more advanced validation as needed)
+    if (visitDate && visitTime && numVisitors > 0 && email) {
+        // Show confirmation message
+        document.getElementById('confirmationMessage').style.display = 'block';
+    } else {
+        alert('Please fill out all fields correctly.');
+    }
+});
