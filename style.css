@@ -102,19 +102,33 @@ header {
 
 .navbar {
     display: flex;
-    padding: 15px 0 15px 20px;
-    justify-content: space-between;
-    align-items: center;
+    padding: 15px 20px; /* Adjust the left padding if needed */
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Center items vertically */
     margin: auto;
     max-width: var(--site-max-width);
-
-
     backdrop-filter: blur(30px);
-    box-shadow: 0px 0px 0px rgba(227, 228, 237. 0.37);
+    box-shadow: 0px 0px 0px rgba(227, 228, 237, 0.37);
     border: 1.5px solid rgba(255, 255, 255, 0.18);
-    background-color: rgb(237, 232, 245, 0.35);
     border-radius: 10px;
 }
+
+/* Optional: Adjust button margin if needed */
+.navbar .login-btn {
+    background-color: #3D52A0; /* Primary color */
+    border: none;
+    padding: 7px 15px;
+    color: white;
+    font-size: 16px;
+    margin-left: 15px; /* Adjusts the position slightly to the left */
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners for modern look */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    outline: none;
+}
+
 
 .navbar .hamburger-btn {
     display: none;
@@ -169,22 +183,104 @@ header {
     /* background-color: var(--secondary-color); */
     
 }
-.navbar .login-btn {
-    display: flex;
-    padding: 10px 25px;
-    font-size: 18px;
-    font-weight: 500;
-    /* color: var(--white-color); */
-    border-radius: 30px;
-    /* border-color:rgba(255, 255, 255, 0.18) ; */
-    /* background-color: #3b141c; */
-    background-color: rgba(255, 255, 255, 0.18);
-    transition: all 0.2s ease;
+
+
+
+.navbar.login-btn:hover {
+    background-color: #2c3e85; /* Darker blue on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
-.navbar .login-btn:hover{
-    color: var(rgba(255, 255, 255, 0.18));
-    /* background-color: var(--secondary-color); */
+
+/* Popup Form Styling */
+.form-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 400px;
 }
+
+.form-popup .form-box h2 {
+    color: #3D52A0;
+    margin-bottom: 15px;
+}
+
+/* Input Fields Styling */
+.input-field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 10px;
+    background: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.input-field label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #999;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input-field input:focus {
+    background-color: #e6e6e6;
+}
+
+.input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 5px;
+    font-size: 12px;
+    color: #3D52A0;
+}
+
+/* Submit Button Styling */
+.submit-btn {
+    background-color: #3D52A0;
+    border: none;
+    padding: 12px 30px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #2c3e85;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Blur background overlay */
+.blur-bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: none; /* Initially hidden */
+}
+
+
 
 nav label {
     font-size: 32px;
@@ -210,11 +306,13 @@ label .close_btn {
     z-index: 10;
     width: 100%;
     opacity: 0;
+    padding: 40px;
+    border-radius: 10px;
     pointer-events: none;
     max-width: 720px;
     background:white;
     border: 2px solid #fff;
-    transform: translate(-50%, -70%);
+    transform: translate(-50%, -50%);
     filter: blur(10%);
 }
 
@@ -223,6 +321,20 @@ label .close_btn {
     pointer-events: auto;
     transform: translate(-50%, -50%);
     transition: transform 0.3s ease, opacity 0.1s;
+}
+/* Close Button Styling */
+.form-popup .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #3D52A0; /* Matches the main color scheme */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #2c3e85; /* Darker on hover */
 }
 
 .form-popup .close-btn {
@@ -255,8 +367,71 @@ label .close_btn {
 .form-popup .form-box {
     display: flex;
 }
+/* Form Popup Layout */
+.form-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px; /* Adjust width to fit the layout */
+    max-width: 90%;
+    display: flex;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 1000; /* Ensures it's above navbar */
+    background: #fff;
+    overflow: hidden; /* Prevent overflow issues */
+}
 
+/* Form Box */
+.form-popup .form-box {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Form Details */
 .form-box .form-details {
+    width: 100%;
+    max-width: 330px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('https://victoriamemorial-cal.org/wp-content/uploads/2024/04/Victoria-Memorial-Hall-Kolkata.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 0 40px;
+}
+
+/* Form Content */
+.form-content {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Form Close Button */
+.form-popup .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: var(--primary-color);
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's visible above the form */
+    transition: color 0.3s ease;
+}
+
+.form-popup .close-btn:hover {
+    color: #2c3e85; /* Hover effect */
+}
+
+/*.form-box .form-details {
     width: 100%;
     color: #fff;
     max-width: 330px;
@@ -265,10 +440,10 @@ label .close_btn {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+}*/
 
 .login .form-details {
-    padding: 0 40px;
+    padding: 0 20px;
     color: var(--primary-color);
     background: url(https://victoriamemorial-cal.org/wp-content/uploads/2024/04/Victoria-Memorial-Hall-Kolkata.jpg);
     background-position: center;
@@ -277,6 +452,7 @@ label .close_btn {
 
 .signup .form-details {
     padding: 0 20px;
+    color: var(--primary-color);
     background: url(https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTCUomuXTKjCny7iObFiPThQRE-MIrnsvowy4MJ2ahRKcYdYa4v6_hJQu_YjTE0P1H0zpmsVc4GSfu9I8nb3RDKlniyXDv-539aZphSzg);
     background-position: center;
     background-size: cover;
@@ -296,7 +472,7 @@ form .input-field {
     position: relative;
     height: 50px;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 35px;
 }
 
 .input-field input {
@@ -345,10 +521,71 @@ form .input-field {
 
 form :where(.forgot-pass-link, .policy-text) {
     display: inline-flex;
-    margin-top: 13px;
+    margin-top: 1px;
     font-size: 0.95rem;
 }
+.signup .form-content button {
+    background-color: #3D52A0; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 20px; /* Space above the button */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+.signup .form-content button:hover {
+    background-color: #2c3e85; /* Darker on hover */
+}
+.login .form-content button {
+    background-color: #3D52A0; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-top: 20px; /* Space above the button */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+.input-field input {
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    font-size: 0.95rem;
+    padding: 12px 15px; /* Consistent padding */
+    border: 1px solid #717171;
+    border-radius: 3px;
+    transition: border 0.3s ease; /* Smooth transition */
+}
 
+.input-field input:focus {
+    border: 1px solid #3E362E; /* Keep border consistent on focus */
+}
+
+.input-field label {
+    position: absolute;
+    top: 50%; /* Center the label */
+    left: 15px;
+    transform: translateY(-50%);
+    color: #4a4646;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) {
+    padding: 12px 15px; /* Consistent padding on focus */
+}
+
+.input-field input:is(:focus, :valid)~label {
+    transform: translateY(-120%);
+    color: var(--primary-color);
+    font-size: 0.75rem;
+}
+
+.login .form-content button:hover {
+    background-color: #2c3e85; /* Darker on hover */
+}
 form button {
     width: 100%;
     color: #fff;
@@ -653,7 +890,7 @@ path:hover, circle:hover {
 
 .button {
   display: flex;
-  justify-content: center;
+  justify-content: end;
 }
 .read-more-btn {
   margin-bottom: 8px;
@@ -998,3 +1235,25 @@ footer {
 .footer_section .follow_us i:hover {
     color: var(--secondary-color);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
