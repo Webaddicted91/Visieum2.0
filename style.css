@@ -174,16 +174,16 @@ header {
     padding: 10px 25px;
     font-size: 18px;
     font-weight: 500;
-    /* color: var(--white-color); */
     border-radius: 30px;
-    /* border-color:rgba(255, 255, 255, 0.18) ; */
-    /* background-color: #3b141c; */
-    background-color: rgba(255, 255, 255, 0.18);
-    transition: all 0.2s ease;
-}
-.navbar .login-btn:hover{
-    color: var(rgba(255, 255, 255, 0.18));
-    /* background-color: var(--secondary-color); */
+    background-color: transparent; /* Make background fully transparent */
+    border: none; /* Remove any border */
+    transition: none; /* Disable transition effects */
+
+}    
+.navbar .login-btn:hover {
+    color: inherit; /* Keep the color as it is without changing */
+    background-color: transparent; /* Ensure the background remains transparent */
+    transition: none; /* Remove any transition effects */
 }
 
 nav label {
