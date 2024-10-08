@@ -11,7 +11,7 @@
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
-    />
+    />    
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="app.js" defer></script>
   
@@ -20,11 +20,10 @@
   <div>
     <header>
       <nav class="navbar">
-          <span class="hamburger-btn material-symbols-rounded">menu</span>
-          <a href="#" class="logo">
-              <img src="logo1.png" alt="VISIEUM">
-              <h2>VISIEUM</h2>
-          </a>
+        <div class="logo">
+            <img src="logo1.png" alt="VISIEUM">
+        </div>
+        <div class="hamburger-btn" onclick="toggleNavbar()">☰</div>
 
           <input type="checkbox" id="click" />
         <label for="click">
@@ -117,7 +116,7 @@
     <main>
       <div class="slider_container">
         <ul class="slider">
-          <li class="item" style="background-image: url(https://citypalacemuseum.org/img/contact-banner.jpg)">
+          <li class="item active"  style="background-image: url(https://citypalacemuseum.org/img/contact-banner.jpg)">
             <div class="content">
               <h2 class="title"> Museum 1 </h2>
               <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem velit repudiandae hic nobis ipsum laboriosam recusandae distinctio ab tempore similique?</p>
@@ -131,7 +130,7 @@
               <button>Read More</button>
             </div>
           </li>
-          <li class="item" style="background-image: url(https://www.tourism.rajasthan.gov.in/content/dam/rajasthan-tourism/english/city/attraction/banners/desk/10047.jpg)">
+          <li class="item" style="background-image: url(https://udaipurtourism.co.in/images/places-to-visit/headers/city-palace-government-museum-udaipur-indian-tourism-entry-fee-timings-holidays-reviews-header.jpg)">
             <div class="content">
               <h2 class="title"> Museum 3</h2>
               <p>
@@ -682,11 +681,16 @@
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+      function toggleNavbar() {
+          const links = document.querySelector('.navbar .links');
+          links.classList.toggle('active'); // Toggle the active class to show/hide links
+      }
+      </script>
     <script src="app.js"></script>
     <script src="book.html"></script>
     <script src="gallery.html"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
     <script type="module" src="script.js"></script>
     <script>
             var tooltipSpan = document.getElementById('details-box');
