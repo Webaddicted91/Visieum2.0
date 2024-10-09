@@ -7,9 +7,12 @@ const formPopup = document.querySelector(".form-popup");
 const hidePopupBtn = formPopup.querySelector(".close-btn");
 const signupLoginLink = formPopup.querySelectorAll(".bottom-link a");
 
-// Add signup form
-const signupForm = formPopup.querySelector("#signup-form"); // Make sure the form has the ID "signup-form"
 
+
+// AOS.init({
+//     duration:800,
+//     delay:400
+//   });
 
 // Home page
 
@@ -21,7 +24,8 @@ function activate(e) {
   e.target.matches('.prev') && slider.prepend(items[items.length-1]);
 }
 
-document.addEventListener('click', activate, false);
+document.addEventListener('click',activate,false);
+
 
 // Show mobile menu
 hamburgerBtn.addEventListener("click", () => {
@@ -29,7 +33,7 @@ hamburgerBtn.addEventListener("click", () => {
 });
 
 // Hide mobile menu
-hideMenuBtn.addEventListener("click", () => hamburgerBtn.click());
+hideMenuBtn.addEventListener("click", () =>  hamburgerBtn.click());
 
 // Show login popup
 showPopupBtn.addEventListener("click", () => {
@@ -47,23 +51,5 @@ signupLoginLink.forEach(link => {
     });
 });
 
-
-// Handle signup form submission
-signupForm.addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent the default form submission
-    
-    // You can add form validation here if needed
-
-    // Redirect to the profile page after successful signup
-    window.location.href = 'profile1.html';
-});
-
-// Logout button functionality (Add this after your existing code)
-const logoutBtn = document.querySelector(".logout-btn"); // Make sure the button has a class of "logout-btn"
-
-// Handle logout click and redirect to home page
-logoutBtn.addEventListener("click", function() {
-    // Redirect to home page (update 'index.html' with your actual home page URL if necessary)
-    window.location.href = 'index.html';
-});
+// Museum locator
 
