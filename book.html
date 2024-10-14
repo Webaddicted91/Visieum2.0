@@ -5,6 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book</title>
     <link rel="stylesheet" href="style.css">
+   <style>/* Form Container Styling */
+    form {
+        width: 600px;
+        max-height: 600px; /* Set a maximum height for the form */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+       
+        font-family: 'Arial', sans-serif;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        overflow-y: auto; /* Enable scrolling within the form */
+    }
+    
+    /* Input Fields */
+    .input-fields {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    
+    /* Input Field Headers */
+    .input-field-header {
+        font-weight: bold;
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 5px;
+    }
+    
+    /* Input Field Styling */
+    .input-field {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        background-color: #fff;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition: border-color 0.3s ease;
+    }
+    
+    .input-field:focus {
+        border-color: #007BFF;
+        outline: none;
+        box-shadow: inset 0 1px 3px rgba(0, 123, 255, 0.2);
+    }
+    
+    /* Button Styling */
+    .signin-btn button {
+        background-color: #007BFF;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .signin-btn button:hover {
+        background-color: #0056b3;
+    }
+    
+    /* Optional: Add subtle hover effect for inputs */
+    .input-field:hover {
+        border-color: #007BFF;
+    }
+    </style>
+   
 </head>
 <body>
     <header>
@@ -31,9 +101,54 @@
                 <li><a href="index.html">Contact</a></li>
                
             </ul>
-            <!--<button class="login-btn">LOG IN</button> -->
+           
+           
+           <!--<button class="login-btn">LOG IN</button> -->
         </nav>
+        <form>
+            <div class="input-fields">
+                <div class="input-field-header">Email</div>
+                <input type="email" class="input-field">
+            </div>
+            <div class="input-fields">
+                <div class=input-field-header>Name</div>
+                <input type="Name" class="input-field">
+            </div>
+           <div class="input-fields">
+            <div class=input-field-header>Number of People</div>
+                <input type="number" class="input-field"  min="1">
+           </div>
+           <div class="input-fields">
+            <div class=input-field-header>Aadhar Card Number</div>
+                <input type="aadhar-number" class="input-field">
+           </div>
+           <!-- Slot Selection -->
+    <div class="input-fields">
+        <div class="input-field-header">Select Slot</div>
+        <select class="input-field">
+            <option value="morning">Morning (10 AM - 12 PM)</option>
+            <option value="afternoon">Afternoon (12 PM - 3 PM)</option>
+            <option value="evening">Evening (3 PM - 6 PM)</option>
+        </select>
+    </div>
+
+    <!-- Museum Section Selection -->
+    <div class="input-fields">
+        <div class="input-field-header">Which Museum Section?</div>
+        <select class="input-field">
+            <option value="history">History</option>
+            <option value="art">Art</option>
+            <option value="science">Science</option>
+            <option value="technology">Technology</option>
+        </select>
+    </div>
+           
+            <div class="signin-btn">
+                <button>Book</button>
+            </div>
+        </form>
+        
      </header>
-     <script src="app.js"></script>
-</body>
-</html>
+     
+     </body>
+     </html>
