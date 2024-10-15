@@ -6,7 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Defining Custome Variables */
@@ -102,7 +102,7 @@ header {
 
 .navbar {
     display: flex;
-    padding: 15px 0 15px 20px;
+    padding: 15px 10px 15px 20px;
     justify-content: space-between;
     align-items: center;
     margin: auto;
@@ -163,12 +163,16 @@ header {
     transition: all 0.2s ease;
 }
 
-.navbar .links a:hover {
-    color: var(--secondary-color);
-    text-decoration: underline;
-    /* background-color: var(--secondary-color); */
-    
+.navbar .links a:active,
+.navbar .links a:hover,
+.navbar .links a.active {
+    color: var(--secondary-color); /* Changes the text color to the secondary color defined in CSS variables */
+    text-decoration: none;         /* Removes any default text decoration (like underline) */
+    /* background-color: var(--secondary-color); */ /* This line is still commented out, but you can uncomment it if you want a background color */
 }
+
+
+
 .navbar .login-btn {
     display: flex;
     padding: 10px 25px;
@@ -176,7 +180,7 @@ header {
     font-weight: 500;
     /* color: var(--white-color); */
     border-radius: 30px;
-    /* border-color:rgba(255, 255, 255, 0.18) ; */
+    border-color:rgba(255, 255, 255, 0.111) ;
     /* background-color: #3b141c; */
     background-color: rgba(255, 255, 255, 0.18);
     transition: all 0.2s ease;
@@ -269,7 +273,7 @@ label .close_btn {
 
 .login .form-details {
     padding: 0 40px;
-    color: var(--primary-color);
+    color: white;
     background: url(https://victoriamemorial-cal.org/wp-content/uploads/2024/04/Victoria-Memorial-Hall-Kolkata.jpg);
     background-position: center;
     background-size: cover;
@@ -335,7 +339,7 @@ form .input-field {
 }
 
 .form-box a {
-    color: var(--primary-color);
+    color: rgb(206, 13, 13);
     text-decoration: none;
 }
 

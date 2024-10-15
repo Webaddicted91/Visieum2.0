@@ -15,13 +15,35 @@ const signupLoginLink = formPopup.querySelectorAll(".bottom-link a");
 //   });
 
 // Home page
+document.querySelectorAll('.navbar .links a').forEach(link => {
+    link.addEventListener('click', function() {
+        // Remove active class from all links
+        document.querySelectorAll('.navbar .links a').forEach(link => {
+            link.classList.remove('active');
+        });
+        // Add active class to the clicked link
+        this.classList.add('active');
+    });
+});
 
 const slider = document.querySelector('.slider');
+const items = document.querySelectorAll('.item'); // Select all items in the slider
+const intervalTime = 3000; // Set the interval time (in milliseconds)
+let currentIndex = 0;
+
+function showNextImage() {
+    // Move the current image to the end of the slider
+    slider.append(items[currentIndex]);
+    currentIndex = (currentIndex + 1) % items.length; // Update the index
+}
 
 function activate(e) {
-  const items = document.querySelectorAll('.item');
-  e.target.matches('.next') && slider.append(items[0])
-  e.target.matches('.prev') && slider.prepend(items[items.length-1]);
+    if (e.target.matches('.next')) {
+        showNextImage(); // Show next image on click
+    } else if (e.target.matches('.prev')) {
+        slider.prepend(items[(currentIndex - 1 + items.length) % items.length]); // Move the previous item to the start
+        currentIndex = (currentIndex - 1 + items.length) % items.length; // Update the index
+    }
 }
 
 document.addEventListener('click',activate,false);
@@ -39,6 +61,7 @@ hideMenuBtn.addEventListener("click", () =>  hamburgerBtn.click());
 showPopupBtn.addEventListener("click", () => {
     document.body.classList.toggle("show-popup");
 });
+setInterval(showNextImage, intervalTime); 
 
 // Hide login popup
 hidePopupBtn.addEventListener("click", () => showPopupBtn.click());
